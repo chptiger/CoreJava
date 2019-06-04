@@ -1,0 +1,20 @@
+
+Note:
+Not all the objects in java are eligible for cloning process. The objects which implement Cloneable interface are only eligible for cloning process.
+
+What's Cloning?
+Cloning is a process of creating an exact copy of an existing object in the memory. 
+In java, clone() method of java.lang.Object class is used for cloning process. 
+This method creates an exact copy of an object on which it is called through field-by-field assignment and returns the reference of that object. 
+Not all the objects in java are eligible for cloning process. The objects which implement Cloneable interface are only eligible for cloning process. 
+Cloneable interface is a marker interface which is used to provide the marker to cloning process. Click here to see more info on clone() method in java.
+
+
+Deep Copy:
+Deep copy of an object will have exact copy of all the fields of original object just like shallow copy. 
+But in additional, if original object has any references to other objects as fields, then copy of those objects are also created by calling clone() method on them.
+
+To create a deep copy of an object, you have to override the clone() method
+
+Shallow Copy:
+The default version of clone() method creates the shallow copy of an object. 

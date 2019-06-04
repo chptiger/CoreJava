@@ -1,0 +1,29 @@
+Going back to basic: 
+Thread-safe simply means that two or more threads must work in coordination on the shared resource or object. 
+They shouldn't over-ride the changes done by any other thread.
+
+Now String is an immutable class, whenever a thread tries to change it, it simply end up creating a new object. 
+So simply even the same thread can't make any changes to the original object & 
+talking about the other thread would be like going to Sun but the catch here is that generally we use the same old reference to point that newly created object.
+
+When we do code, we evaluate any change in object with the reference only.
+
+Statement 1: String str = "123"; // initially string shared to two threads
+
+Statement 2: str = str+"FirstThread"; // to be executed by thread one
+
+Statement 3: str=str+"SecondThread"; // to be executed by thread two
+
+Now since there is no synchronize, volatile or final keywords to tell compiler to skip using its intelligence for optimization (any reordering or caching things), 
+this code can be run in following manner.
+
+Load Statement2, so str = "123"+"FirstThread"
+Load Statement3, so str = "123"+"SecondThread"
+Store Statement3, so str = "123SecondThread"
+Store Statement2, so str = "123FirstThread"
+
+and finally the value in reference str="123FirstThread" and for sometime if we assume that luckily our GC thread is sleeping, 
+that our immutable objects still exist untouched in our string pool.
+
+So, Immutable objects are always thread-safe, but their references may not be. 
+To make their references thread-safe, we may need to access them from synchronized blocks/methods.

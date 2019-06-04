@@ -1,0 +1,25 @@
+Interface Interview Question
+
+1. what's interface?
+	Interface is not a class.
+    Interface is a blueprint for your class that can be used to implement a class; 
+	Interface could have concrete method(default and static) --> Java 8
+	
+2. When to use interface?
+   
+   What your interface can have is static members and method signature.
+   ex:
+   public interface Brain {
+   	public static final int number = 1;
+   	public void talk(String name);
+   	public abstract void doProgramming();// interface is not a class, we declare a abstract method inside class, we must make the class abstract;
+   }
+   
+3. How to use interface?
+
+4. Could you provide an example with it?
+
+5. Why use abstract method inside the interface?
+ 	abstract is redundant in this case. All methods defined on an interface are public and abstract by definition.
+ 	Every method declaration in the body of an interface is implicitly abstract, so its body is always represented by a semicolon, not a block.
+ 	Every method declaration in the body of an interface is implicitly public.

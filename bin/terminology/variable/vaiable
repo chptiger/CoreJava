@@ -1,0 +1,9 @@
+A variable is a container which holds the value while the java program is executed. A variable is assigned with a data type
+
+Variable is a name of memory location.
+
+Variable type:
+ local, instance, static
+ 
+Data type:
+ primitive, non-primitive
