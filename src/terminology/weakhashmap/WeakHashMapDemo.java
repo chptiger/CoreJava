@@ -1,6 +1,5 @@
 package terminology.weakhashmap;
 
-import static com.jayway.awaitility.Awaitility.await;
 import static org.junit.Assert.assertTrue;
 
 import java.util.WeakHashMap;
@@ -52,7 +51,7 @@ public class WeakHashMapDemo {
         System.gc();
 
         //then GC will finally reclaim that object
-        await().atMost(10, TimeUnit.SECONDS).until(map::isEmpty);
+//        await().atMost(10, TimeUnit.SECONDS).until(map::isEmpty);
     }
 
     @Test
@@ -77,8 +76,8 @@ System.out.println(stringMap);
         System.gc();
 System.out.println(stringMap);
         //then
-        await().atMost(10, TimeUnit.SECONDS).until(() -> map.size() == 1);
-        await().atMost(10, TimeUnit.SECONDS).until(() -> map.containsKey(imageNameSecond));
+//        await().atMost(10, TimeUnit.SECONDS).until(() -> map.size() == 1);
+//        await().atMost(10, TimeUnit.SECONDS).until(() -> map.containsKey(imageNameSecond));
     }
 
 
