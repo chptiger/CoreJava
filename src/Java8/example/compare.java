@@ -48,7 +48,7 @@ public class compare {
 
     private static List<Developer> getDevelopers() {
 
-        List<Developer> result = new ArrayList<Developer>()
+        List<Developer> result = new ArrayList<Developer>();
 
         result.add(new Developer("mkyong", new BigDecimal("70000"), 33));
         result.add(new Developer("alvin", new BigDecimal("80000"), 33));
